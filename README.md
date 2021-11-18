@@ -15,9 +15,15 @@ References: [Gadgethacks](https://android.gadgethacks.com/how-to/set-up-wireless
 
 On your Android 11+ phone, enable developer settings by tapping the build number multiple times. After the developer settings, are unlocked, open them up and enable "Wireless debugging". Once this is enabled, click on the text next to the toggle to get to the details of this setting. 
 
+![Enable wireless debugging](https://img.gadgethacks.com/img/52/64/63724404485511/0/set-up-wireless-debugging-android-11-send-adb-commands-without-usb-cable.w1456.jpg) ![Allow wireless debugging](https://img.gadgethacks.com/img/15/73/63724404499027/0/set-up-wireless-debugging-android-11-send-adb-commands-without-usb-cable.w1456.jpg)
+
 Write down the displayed IP and port - this is the connection for the main ADB connection.
 
+![Main ADB connection interface](https://img.gadgethacks.com/img/40/29/63724411271707/0/set-up-wireless-debugging-android-11-send-adb-commands-without-usb-cable.w1456.jpg)
+
 Click on "Pair device with pairing code" below - you will see a pairing code, the same IP address and a different port. Write these down as well and keep this window open. This is the connection only for pairing.
+
+![Pairing ADB connection interface](https://img.gadgethacks.com/img/94/18/63724411291019/0/set-up-wireless-debugging-android-11-send-adb-commands-without-usb-cable.w1456.jpg)
 
 ## Step 2 - Tunnel ADB via ngrok
 
@@ -25,6 +31,8 @@ Download [ngrok](https://ngrok.com/). Open a terminal on your computer, that mus
 
 Run ngrok to tunnel the pairing connection first, for example 
 `ngrok tcp 192.168.178.33:42739`. ngrok will provide you with an external domain and port, like `0.tcp.ngrok.io:13840`.
+
+![ngrok sample screen](https://forums.triplea-game.org/assets/uploads/files/1589396698766-e9c19651-391d-4f53-8119-35340257a5f2-grafik.png)
 
 Open your Android code in your cloud IDE with adb installed - like [this example](https://gitpod.io/#https://github.com/JamesCullum/flutter-adb-template). Use the command line terminal in the IDE to pair the IDE with the device like `adb pair 0.tcp.ngrok.io:13840`. Enter the pairing code and wait until the connection is confirmed.
 
@@ -35,4 +43,6 @@ Now connect to the main ADB connection via `adb connect 6.tcp.ngrok.io:16514` - 
 ## Step 3 - Run the app
 Once the connection is established, you can use your phone in combination with the IDE to work on apps as usual. 
 
-In the example mentioned above, you can list all connected devices via `flutter devices`. Build and push a development build to the device via `flutter run`.
+In the example mentioned above, you can list all connected devices via `flutter devices`. Build and push a development build to the device via `flutter run`. This will compile the code, pushes it to the phone via the internet and launches it on the phone.
+
+![Flutter Programming View](https://camo.githubusercontent.com/6f5049176dc412060d5887e80874388f13fa9d4a43b0d340be9b4ed3ae6f0757/68747470733a2f2f64617274636f64652e6f72672f696d616765732f6d61726b6574706c6163652f666c75747465725f686f745f72656c6f61642e676966)
