@@ -22,13 +22,14 @@ tasks:
 ports:
   - port: 5900
     onOpen: ignore
-    # vnc
+# vnc
   - port: 6080
     onOpen: open-preview
-    # flutter
+# flutter
   - port: 8080
     onOpen: open-preview
 
 vscode:
   extensions:
     - dart-code.flutter
+    - dart-code.dart-code

@@ -11,19 +11,19 @@ This project is intended to demonstrate how to easily program Android apps on Gi
  - Wi-fi connection between the current device (laptop) and the phone
 
 ## Step 1 - Enable web debugging
-References: [Gadgethacks](https://android.gadgethacks.com/how-to/set-up-wireless-debugging-android-11-send-adb-commands-without-usb-cable-0302898/) / [Gitconnected](https://levelup.gitconnected.com/wireless-debugging-in-android-11-7169d2596a81)
+References: [Gadgethacks - Picture Source](https://android.gadgethacks.com/how-to/set-up-wireless-debugging-android-11-send-adb-commands-without-usb-cable-0302898/) / [Gitconnected](https://levelup.gitconnected.com/wireless-debugging-in-android-11-7169d2596a81)
 
 On your Android 11+ phone, enable developer settings by tapping the build number multiple times. After the developer settings, are unlocked, open them up and enable "Wireless debugging". Once this is enabled, click on the text next to the toggle to get to the details of this setting. 
 
-![Enable wireless debugging](https://img.gadgethacks.com/img/52/64/63724404485511/0/set-up-wireless-debugging-android-11-send-adb-commands-without-usb-cable.w1456.jpg) ![Allow wireless debugging](https://img.gadgethacks.com/img/15/73/63724404499027/0/set-up-wireless-debugging-android-11-send-adb-commands-without-usb-cable.w1456.jpg)
+![Enable wireless debugging](https://img.gadgethacks.com/img/52/64/63724404485511/0/set-up-wireless-debugging-android-11-send-adb-commands-without-usb-cable.w1456.jpg | height=500) ![Allow wireless debugging](https://img.gadgethacks.com/img/15/73/63724404499027/0/set-up-wireless-debugging-android-11-send-adb-commands-without-usb-cable.w1456.jpg | height=500)
 
 Write down the displayed IP and port - this is the connection for the main ADB connection.
 
-![Main ADB connection interface](https://img.gadgethacks.com/img/40/29/63724411271707/0/set-up-wireless-debugging-android-11-send-adb-commands-without-usb-cable.w1456.jpg)
+![Main ADB connection interface](https://img.gadgethacks.com/img/40/29/63724411271707/0/set-up-wireless-debugging-android-11-send-adb-commands-without-usb-cable.w1456.jpg | height=500)
 
 Click on "Pair device with pairing code" below - you will see a pairing code, the same IP address and a different port. Write these down as well and keep this window open. This is the connection only for pairing.
 
-![Pairing ADB connection interface](https://img.gadgethacks.com/img/94/18/63724411291019/0/set-up-wireless-debugging-android-11-send-adb-commands-without-usb-cable.w1456.jpg)
+![Pairing ADB connection interface](https://img.gadgethacks.com/img/94/18/63724411291019/0/set-up-wireless-debugging-android-11-send-adb-commands-without-usb-cable.w1456.jpg | height=500)
 
 ## Step 2 - Tunnel ADB via ngrok
 
