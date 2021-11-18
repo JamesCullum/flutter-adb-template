@@ -15,15 +15,15 @@ References: [Gadgethacks - Picture Source](https://android.gadgethacks.com/how-t
 
 On your Android 11+ phone, enable developer settings by tapping the build number multiple times. After the developer settings, are unlocked, open them up and enable "Wireless debugging". Once this is enabled, click on the text next to the toggle to get to the details of this setting. 
 
-![Enable wireless debugging](https://img.gadgethacks.com/img/52/64/63724404485511/0/set-up-wireless-debugging-android-11-send-adb-commands-without-usb-cable.w1456.jpg | height=500) ![Allow wireless debugging](https://img.gadgethacks.com/img/15/73/63724404499027/0/set-up-wireless-debugging-android-11-send-adb-commands-without-usb-cable.w1456.jpg | height=500)
+<img src="https://user-images.githubusercontent.com/5477111/142421296-28dd7898-96b5-44ca-a9b5-760fada840a1.jpg" alt="Enable wireless debugging" height="500"> <img src="https://user-images.githubusercontent.com/5477111/142421408-95d5d969-48c2-4208-aeb2-48521160bfc9.jpg" alt="Allow wireless debugging" height="500">
 
 Write down the displayed IP and port - this is the connection for the main ADB connection.
 
-![Main ADB connection interface](https://img.gadgethacks.com/img/40/29/63724411271707/0/set-up-wireless-debugging-android-11-send-adb-commands-without-usb-cable.w1456.jpg | height=500)
+<img src="https://user-images.githubusercontent.com/5477111/142421532-20a6af27-0d10-400c-95f1-b2e3ff255e51.jpg" alt="Main ADB connection interface" height="500">
 
 Click on "Pair device with pairing code" below - you will see a pairing code, the same IP address and a different port. Write these down as well and keep this window open. This is the connection only for pairing.
 
-![Pairing ADB connection interface](https://img.gadgethacks.com/img/94/18/63724411291019/0/set-up-wireless-debugging-android-11-send-adb-commands-without-usb-cable.w1456.jpg | height=500)
+<img src="https://user-images.githubusercontent.com/5477111/142421657-0ec8d1e3-b35b-435b-a8d8-6bc58b3b15a5.jpg" alt="Pairing ADB connection interface" height="500">
 
 ## Step 2 - Tunnel ADB via ngrok
 
