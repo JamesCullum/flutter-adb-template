@@ -11,9 +11,9 @@ This project is intended to demonstrate how to easily program Android apps on Gi
  - Wi-fi connection between the current device (laptop) and the phone
 
 ## Step 1 - Enable web debugging
-References: [Gadgethacks - Picture Source](https://android.gadgethacks.com/how-to/set-up-wireless-debugging-android-11-send-adb-commands-without-usb-cable-0302898/) / [Gitconnected](https://levelup.gitconnected.com/wireless-debugging-in-android-11-7169d2596a81)
+References: [Gadgethacks - Picture source](https://android.gadgethacks.com/how-to/set-up-wireless-debugging-android-11-send-adb-commands-without-usb-cable-0302898/) / [Gitconnected](https://levelup.gitconnected.com/wireless-debugging-in-android-11-7169d2596a81)
 
-On your Android 11+ phone, enable developer settings by tapping the build number multiple times. After the developer settings, are unlocked, open them up and enable "Wireless debugging". Once this is enabled, click on the text next to the toggle to get to the details of this setting. 
+On your Android 11+ phone, enable developer settings by tapping the build number multiple times. After the developer settings are unlocked, open them up and enable "Wireless debugging". Once this is enabled, click on the text next to the toggle to get to the details of this setting. 
 
 <img src="https://user-images.githubusercontent.com/5477111/142421296-28dd7898-96b5-44ca-a9b5-760fada840a1.jpg" alt="Enable wireless debugging" height="500"> <img src="https://user-images.githubusercontent.com/5477111/142421408-95d5d969-48c2-4208-aeb2-48521160bfc9.jpg" alt="Allow wireless debugging" height="500">
 
