@@ -17,26 +17,22 @@ On your Android 11+ phone, enable developer settings by tapping the build number
 
 <img src="https://user-images.githubusercontent.com/5477111/142421296-28dd7898-96b5-44ca-a9b5-760fada840a1.jpg" alt="Enable wireless debugging" height="500"> <img src="https://user-images.githubusercontent.com/5477111/142421408-95d5d969-48c2-4208-aeb2-48521160bfc9.jpg" alt="Allow wireless debugging" height="500">
 
-Write down the displayed IP and port - this is the connection for the main ADB connection.
+Write down the displayed IP and port - this is the connection for the main ADB connection. Click on "Pair device with pairing code" below - you will see a pairing code, the same IP address and a different port. Write these down as well and keep this window open. This is the connection only for pairing.
 
-<img src="https://user-images.githubusercontent.com/5477111/142421532-20a6af27-0d10-400c-95f1-b2e3ff255e51.jpg" alt="Main ADB connection interface" height="500">
-
-Click on "Pair device with pairing code" below - you will see a pairing code, the same IP address and a different port. Write these down as well and keep this window open. This is the connection only for pairing.
-
-<img src="https://user-images.githubusercontent.com/5477111/142421657-0ec8d1e3-b35b-435b-a8d8-6bc58b3b15a5.jpg" alt="Pairing ADB connection interface" height="500">
+<img src="https://user-images.githubusercontent.com/5477111/142421532-20a6af27-0d10-400c-95f1-b2e3ff255e51.jpg" alt="Main ADB connection interface" height="500"> <img src="https://user-images.githubusercontent.com/5477111/142421657-0ec8d1e3-b35b-435b-a8d8-6bc58b3b15a5.jpg" alt="Pairing ADB connection interface" height="500">
 
 ## Step 2 - Tunnel ADB via ngrok
 
-Download [ngrok](https://ngrok.com/). Open a terminal on your computer, that must be in the same wifi network like the phone. You can verify this by pinging the phone IP address like `ping 192.168.178.33` - if the ping succeeds, your network settings are correct.
+Download [ngrok](https://ngrok.com/). Open a terminal on your computer, that must be in the same wifi network like the phone. You can verify this by pinging the phone IP address like `ping 192.168.86.23` - if the ping succeeds, your network settings are correct.
 
 Run ngrok to tunnel the pairing connection first, for example 
-`ngrok tcp 192.168.178.33:42739`. ngrok will provide you with an external domain and port, like `0.tcp.ngrok.io:13840`.
+`ngrok tcp 192.168.86.23:42913`. ngrok will provide you with an external domain and port, like `0.tcp.ngrok.io:13840`.
 
 ![ngrok sample screen](https://forums.triplea-game.org/assets/uploads/files/1589396698766-e9c19651-391d-4f53-8119-35340257a5f2-grafik.png)
 
 Open your Android code in your cloud IDE with adb installed - like [this example](https://gitpod.io/#https://github.com/JamesCullum/flutter-adb-template). Use the command line terminal in the IDE to pair the IDE with the device like `adb pair 0.tcp.ngrok.io:13840`. Enter the pairing code and wait until the connection is confirmed.
 
-Terminate the ngrok tunnel for the pairing connection (CTRL + C in the local terminal). Now create a new tunnel for the main ADB connection, like `ngrok tcp 192.168.178.33:37829` which will provide you with a new domain and port like `6.tcp.ngrok.io:16514`.
+Terminate the ngrok tunnel for the pairing connection (CTRL + C in the local terminal). Now create a new tunnel for the main ADB connection, like `ngrok tcp 192.168.86.23:41157` which will provide you with a new domain and port like `6.tcp.ngrok.io:16514`.
 
 Now connect to the main ADB connection via `adb connect 6.tcp.ngrok.io:16514` - this requires the previous pairing step to succeed. The connection should establish successfully.
 
